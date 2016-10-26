@@ -1,3 +1,9 @@
 <ul>
   <li *ngFor="let actor of actors" (click)="selectedActor(actor.id)">{{actor.name}}</li>
 </ul>
+
+<div>
+  <span>Name : <h4>{{actor.name}}</h4></span><br/>
+  <span>Height: <h4>{{actor.height}}</h4></span><br/>
+  <span>Mass: <h4>{{actor.mass}}</h4></span><br/>
+</div>

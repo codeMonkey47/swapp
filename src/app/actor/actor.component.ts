@@ -9,7 +9,11 @@ import { ActorService } from './actor.service'
 })
 export class ActorComponent implements OnInit {
 
-  actor:any;
+  actor:any= {
+    name:'',
+    mass:'',
+    height:''
+  };
   actors: Object[] = [{
       name: 'Luke SkyWalker',
       id: 1
