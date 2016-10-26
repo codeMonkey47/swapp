@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 import { FilmService } from './film.service';
-import {Observable} from "rxjs/Rx";
 
 @Component({
   selector: 'film',

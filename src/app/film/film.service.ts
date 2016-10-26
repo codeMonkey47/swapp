@@ -9,7 +9,8 @@ export class FilmService {
   constructor(private http: Http) { }
 
   getFilms() : Observable<any>{
-    return this.http.get('http://swapi.co/api/films').map(res => res.json().results);
+    return this.http.get('http://swapi.co/api/films')
+      .map(res => res.json().results);
   }
 
 }

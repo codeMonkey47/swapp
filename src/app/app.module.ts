@@ -4,8 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { FilmComponent } from './film/film.component';
-import { FilmService } from './film/film.service';
+import { FilmComponent, FilmService } from './film';
 
 @NgModule({
   declarations: [
