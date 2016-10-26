@@ -1,7 +1,10 @@
 <ul *ngFor="let film of films">
-  <li (click)="showDetails(film)" [hidden]="film.winner === 'Empire'">
+  <li (click)="showDetails(film)" [class.empire-wins]="film.winner === 'Empire'">
     {{film.title}}
   </li>
 </ul>
 
-<div *ngIf="selectedFilm">{{selectedFilm.release_year}}</div>
+<div *ngIf="selectedFilm">
+  <div><input type="text" [(ngModel)]="selectedFilm.title"/> </div>
+  <span>{{selectedFilm.release_year}}</span>
+</div>
