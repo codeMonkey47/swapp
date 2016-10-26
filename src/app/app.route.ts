@@ -6,8 +6,8 @@ import {HomeComponent} from "./home/home.component";
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
-  {path: '/films', component: FilmComponent},
-  {path: './actors', component: ActorComponent}
+  {path: 'films', component: FilmComponent},
+  {path: 'actors', component: ActorComponent}
 ];
 
 export const appRoutingProviders: any[]=[];

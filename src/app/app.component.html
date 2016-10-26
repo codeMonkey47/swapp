@@ -1,11 +1,12 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" routerLink="" routerLinkActive="active">Star Wars App</a>
+      <a class="navbar-brand" routerLink="" routerLinkActive="active">SWAPP</a>
     </div>
     <ul class="nav navbar-nav">
       <li><a routerLink="" routerLinkActive="active">Home</a></li>
       <li><a routerLink="films" routerLinkActive="active">Films</a></li>
+      <li><a routerLink="actors" routerLinkActive="active">Actors</a></li>
     </ul>
   </div>
 </nav>
@@ -13,14 +14,7 @@
 <h1 class="jumbotron">
   {{title}}
 </h1>
-<film></film>
-<actor></actor>
 
-
-<ul>
-  <li>Item 1</li>
-  <li>Item 2</li>
-  <li>Item 3</li>
-  <li>Item 4</li>
-  <li>Item 5</li>
-</ul>
+<section class="content">
+  <router-outlet></router-outlet>
+</section>
