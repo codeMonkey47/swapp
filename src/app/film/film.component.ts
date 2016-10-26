@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { FilmService } from './film.service';
+import {Observable} from "rxjs/Rx";
+
 @Component({
   selector: 'film',
   templateUrl: './film.component.html',
@@ -8,28 +11,28 @@ import { Component, OnInit } from '@angular/core';
 export class FilmComponent implements OnInit{
 
   selectedFilm : any = [];
-  films = [{
-    title : 'A New Hope',
-    release_year: 1977,
-    winner : 'Alliance'
-  },{
-    title: 'The Empire Strikes Back',
-    release_year: 1980,
-    winner : 'Empire'
-  },{
-    title: 'Return Of the Jedi',
-    release_year: 1983,
-    winner : 'Alliance'
-  }];
+  films: any[];
+  subscription: any;
 
-  constructor() { }
+  constructor(private filmService: FilmService) { }
+
+  ngOnInit(){
+    this.subscription = this.filmService.getFilms().subscribe(
+      (response) => {
+        this.films = response;
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  };
+
+  cancelSearch(): void{
+    this.subscription.unsubscribe();
+  };
 
   showDetails(film) : void{
     this.selectedFilm = film;
-  }
-
-  ngOnInit(){
-
-  }
+  };
 
 }
