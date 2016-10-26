@@ -26,6 +26,15 @@ export class ActorComponent implements OnInit {
   }, {
       name: 'Darth Vader',
       id : 4
+  }, {
+      name: 'Leia Organa',
+      id: 5
+  }, {
+      name: 'Owen Lars',
+      id: 6
+  }, {
+      name: 'Beru Whitesun lars',
+      id: 7
   }];
 
   constructor(private actorService: ActorService) { }

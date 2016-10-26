@@ -6,11 +6,13 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { FilmModule } from './film';
 import { ActorComponent, ActorService } from './actor';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ActorComponent
+    ActorComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
