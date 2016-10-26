@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { FilmService } from './film.service';
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'film',
@@ -9,29 +10,12 @@ import { FilmService } from './film.service';
 })
 export class FilmComponent implements OnInit{
 
-  selectedFilm : any = [];
-  films: any[];
-  subscription: any;
+  films: Observable<any[]>;
 
   constructor(private filmService: FilmService) { }
 
   ngOnInit(){
-    this.subscription = this.filmService.getFilms().subscribe(
-      (response) => {
-        this.films = response;
-      },
-      (err) => {
-        console.log(err);
-      }
-    );
-  };
-
-  cancelSearch(): void{
-    this.subscription.unsubscribe();
-  };
-
-  showDetails(film) : void{
-    this.selectedFilm = film;
+    this.films = this.filmService.getFilms();
   };
 
 }

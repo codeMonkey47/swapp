@@ -10,13 +10,17 @@ export class FilmService {
 
   getFilms() : Observable<any>{
     return this.http.get('http://swapi.co/api/films')
-      .map(res => res.json().results);
-      // .map( res => {
-      //   res.map((item) => {
-      //     item.id = item.url.slice(26,27);
-      //     return item;
-      //   })
-      // });
+      .map((res) => {
+        return res.json().results.map((item) => {
+          item.id = item.url.slice(26, 27);
+          return item;
+        });
+      });
+  };
+
+  getFilm(id:number): Observable<any>{
+    return this.http.get(`http://swapi.co/api/films/${id}`)
+      .map((res) => res.json());
   }
 
 }
