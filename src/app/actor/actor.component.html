@@ -1,3 +1,7 @@
+<div class="page-header">
+  <h1>Actors <small> Personal Info</small></h1>
+</div>
+
 <ul>
   <li *ngFor="let actor of actors" (click)="selectedActor(actor.id)">{{actor.name}}</li>
 </ul>

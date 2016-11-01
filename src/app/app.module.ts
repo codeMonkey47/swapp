@@ -7,6 +7,7 @@ import { routing} from './app.route';
 import { AppComponent } from './app.component';
 import { FilmModule} from './film';
 import { ActorModule} from './actor';
+import { StarshipModule } from './starship';
 import { HomeComponent } from './home/home.component';
 
 
@@ -21,6 +22,7 @@ import { HomeComponent } from './home/home.component';
     HttpModule,
     FilmModule,
     ActorModule,
+    StarshipModule,
     routing
   ],
   providers: [],

@@ -1,0 +1,39 @@
+<h3>Star Ships</h3>
+
+<table class="table table-hover">
+  <tr>
+    <th>Name</th>
+    <th>Manufacturer</th>
+    <th>Class</th>
+    <th>Cost</th>
+    <th>Cargo Capacity</th>
+    <th>Passengers</th>
+  </tr>
+  <tr *ngFor="let starShip of starShips">
+    <td>{{starShip.name}}</td>
+    <td>{{starShip.manufacturer}}</td>
+    <td>{{starShip.starship_class}}</td>
+    <td>{{starShip.cost_in_credits}}</td>
+    <td>{{starShip.cargo_capacity}}</td>
+    <td>{{starShip.passengers}}</td>
+  </tr>
+</table>
+
+<!-- pager -->
+<ul *ngIf="pager.pages.length" class="pagination">
+  <li [ngClass]="{disabled:pager.currentPage === 1}">
+    <a (click)="setPage(1)">First</a>
+  </li>
+  <li [ngClass]="{disabled:pager.currentPage === 1}">
+    <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+  </li>
+  <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+    <a (click)="setPage(page)">{{page}}</a>
+  </li>
+  <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+    <a (click)="setPage(pager.currentPage + 1)">Next</a>
+  </li>
+  <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+    <a (click)="setPage(pager.totalPages)">Last</a>
+  </li>
+</ul>

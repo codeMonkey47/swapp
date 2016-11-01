@@ -7,7 +7,7 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
   //encapsulation:ViewEncapsulation.None //Use only when you want to turn of encapsulation. This will propogate the top level li class component to children.
 })
 export class AppComponent implements OnInit{
-  title:string = 'app works!';
+  title:string = 'Star Wars Trivia';
 
 
   ngOnInit(){
