@@ -1,3 +1,5 @@
+<h3>Films</h3>
+
 <ul *ngFor="let film of films | async">
   <li (click)="showDetails(film)" [class.empire-wins]="film.winner === 'Empire'">
     <a [routerLink]="['/films',film.id]">{{film.title}}</a>
